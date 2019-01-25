@@ -46,6 +46,7 @@ function download() {
     .then(function(content) {
       saveAs(content, "images.zip");
     })
+    zip = JSZip()
 }
 var mouse_down = false
 document.body.onmousedown = function() {
