@@ -35,6 +35,7 @@ function save() {
     base64: true
   });
   last_index++
+  document.getElementById('nb').innerText = last_index
   clear()
 }
 
@@ -60,3 +61,21 @@ canvas.addEventListener('mousemove', function(evt) {
   }
 }, false)
 clear()
+document.onkeypress = function(evt) {
+    evt = evt || window.event;
+    var charCode = evt.keyCode || evt.which;
+    var charStr = String.fromCharCode(charCode);
+    console.log(charStr)
+    if (charStr == 'c')
+    {
+      clear()
+    }
+    if (charStr == 's')
+    {
+      save()
+    }
+    if (charStr == 'd')
+    {
+      download()
+    }
+};
